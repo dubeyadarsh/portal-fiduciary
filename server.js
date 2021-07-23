@@ -45,10 +45,10 @@ review.find({},(err,result)=>{
 });
 });
 console.log(__dirname);
-app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build","index.html"));
+  res.sendFile(path.join(__dirname, "build","index.html"));
 });
 app.listen(port,()=>{
 console.log(`Server running at port ${port}`);
